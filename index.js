@@ -61,7 +61,7 @@ exports.handler = function (event, context) {
     function parseEvent(logEvent, logGroupName, logStreamName) {
         return {
             // remove '\n' character at the end of the event
-            message: logEvent.message.substring(0, logEvent.message.length - 1),
+            message: logEvent.message.trim(),
             logGroupName: logGroupName,
             logStreamName: logStreamName,
             timestamp: new Date(logEvent.timestamp).toISOString()
