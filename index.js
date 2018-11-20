@@ -101,14 +101,18 @@ exports.handler = function (event, context) {
             };
 
             var req = http.request(options, function (res) {
-                res.on('data', function (result) {
-                    result = JSON.parse(result.toString());
-                    if (result.response === 'ok') {
-                        context.succeed('all events are sent to Loggly');
-                    } else {
-                        console.log(result.response);
-                    }
-                });
+                if (res.statusCode === 200) {
+                    res.on('data', function (result) {
+                        result = JSON.parse(result.toString());
+                        if (result.response === 'ok') {
+                            context.succeed('all events are sent to Loggly');
+                        } else {
+                            console.log(result.response);
+                        }
+                    });
+                } else {
+                    console.log('Error occurred: ' + res.statusCode + ' "' + res.statusMessage + '"');
+                }
                 res.on('end', function () {
                     console.log('No more data in response.');
                     context.done();
