@@ -1,6 +1,6 @@
 {
   "name": "cloudwatch2loggly",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A NodeJS library to send Cloudwatch logs to Loggly",
   "main": "index.js",
   "scripts": {
@@ -8,22 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/psquickitjayant/cloudwatch2loggly.git"
+    "url": "https://github.com/loggly/cloudwatch2loggly.git"
   },
   "keywords": [
     "Loggly",
     "Cloudwatch"
   ],
-  "author": "psquickitjayant",
+  "author": "loggly",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/psquickitjayant/cloudwatch2loggly/issues"
+    "url": "https://github.com/loggly/cloudwatch2loggly/issues"
   },
-  "homepage": "https://github.com/psquickitjayant/cloudwatch2loggly",
+  "homepage": "https://github.com/loggly/cloudwatch2loggly",
   "dependencies": {
-    "aws-sdk": "^2.2.25",
-    "q": "^1.4.1",
-    "request": "^2.67.0",
+    "aws-sdk": "^2.754.0",
     "zlib": "^1.0.5"
   }
 }
